@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASUS Live — Cheatsheet</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0a0a;
+      color: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #00b4d8;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .section {
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .model {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #1e1e1e;
+    }
+    .model:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .model-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .model-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-blue { background: #003f5e; color: #00b4d8; }
+    .badge-green { background: #003b2e; color: #00c896; }
+    .badge-red { background: #3d1a00; color: #ff6b2b; }
+    .badge-purple { background: #2a003d; color: #b060ff; }
+    .badge-gold { background: #3d2e00; color: #ffc300; }
+    .tagline {
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .spec {
+      background: #1e1e1e;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #ccc;
+    }
+    .spec strong { color: #fff; }
+
+    /* Códigos */
+    .codes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .code-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .code-pill {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      background: #000;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 4px 10px;
+      color: #00ff88;
+      min-width: 130px;
+      text-align: center;
+    }
+    .code-meta {
+      flex: 1;
+    }
+    .code-discount {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .code-detail {
+      font-size: 11px;
+      color: #666;
+    }
+    .code-qty {
+      font-size: 11px;
+      color: #555;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* Mapa mental */
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .map-item {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .map-brand {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .map-desc {
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* Premio */
+    .prize-box {
+      background: linear-gradient(135deg, #1a0f00, #1e1200);
+      border: 1px solid #5a3700;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .prize-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffc300;
+      margin-bottom: 6px;
+    }
+    .prize-detail { font-size: 13px; color: #ccc; }
+    .prize-price { font-size: 18px; font-weight: 700; color: #ffc300; margin-top: 6px; }
+    
+    /* Oferta vigencia */
+    .alert {
+      background: #1a0000;
+      border: 1px solid #4a0000;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #ff6b6b;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .emoji { font-size: 18px; }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 ASUS Back to School — Live</h1>
+  <div class="subtitle">Cheatsheet · 4 de marzo 2026 · @bencord</div>
+
+  <!-- ALERTA -->
+  <div class="alert">⏰ Ofertas vigentes: 4 al 15 de marzo · Códigos hasta agotar stock</div>
+
+  <br>
+
+  <!-- MAPA MENTAL -->
+  <div class="section">
+    <div class="section-title">🧠 Mapa mental — quién es quién</div>
+    <div class="map-grid">
+      <div class="map-item">
+        <div class="map-brand">Vivobook</div>
+        <div class="map-desc">Estudio / trabajo cotidiano</div>
+      </div>
+      <div class="map-item">
+        <div class="map-brand">Zenbook</div>
+        <div class="map-desc">Portabilidad premium</div>
+      </div>
+      <div class="map-item">
+        <div class="map-brand">TUF Gaming</div>
+        <div class="map-desc">Gaming accesible / robusto</div>
+      </div>
+      <div class="map-item">
+        <div class="map-brand">ROG</div>
+        <div class="map-desc">Gaming & creación pro</div>
+      </div>
+      <div class="map-item" style="grid-column: span 2;">
+        <div class="map-brand">ROG Xbox Ally</div>
+        <div class="map-desc">Consola portátil — no es notebook</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODELOS -->
+  <div class="section">
+    <div class="section-title">💻 Los 5 productos del live</div>
+
+    <div class="model">
+      <div class="model-header">
+        <span class="model-name">Vivobook S16</span>
+        <span class="badge badge-blue">Trabajo / Estudio</span>
+      </div>
+      <div class="tagline">Para el que edita, estudia y tiene mil pestañas abiertas.</div>
+      <div class="specs">
+        <div class="spec">OLED 16" 120Hz</div>
+        <div class="spec">AMD Ryzen 9</div>
+        <div class="spec">16GB RAM</div>
+        <div class="spec">512GB SSD</div>
+        <div class="spec">Batería ~19h</div>
+        <div class="spec">1.5 kg</div>
+        <div class="spec">Tecla Copilot</div>
+      </div>
+    </div>
+
+    <div class="model">
+      <div class="model-header">
+        <span class="model-name">Zenbook A14</span>
+        <span class="badge badge-green">Ultraliviano</span>
+      </div>
+      <div class="tagline">El más liviano. Para el que vive en movimiento.</div>
+      <div class="specs">
+        <div class="spec">OLED 14" 2.8K 120Hz</div>
+        <div class="spec">Snapdragon X</div>
+        <div class="spec">NPU 45 TOPS</div>
+        <div class="spec">16GB RAM</div>
+        <div class="spec">Batería ~32h</div>
+        <div class="spec"><strong>980g</strong> ← dato wow</div>
+        <div class="spec">Ceraluminum™</div>
+        <div class="spec">Wi-Fi 6E</div>
+      </div>
+    </div>
+
+    <div class="model">
+      <div class="model-header">
+        <span class="model-name">ROG Xbox Ally</span>
+        <span class="badge badge-red">Consola portátil</span>
+      </div>
+      <div class="tagline">Consola de mano, no notebook. Xbox + PC en uno.</div>
+      <div class="specs">
+        <div class="spec">Pantalla 7" FHD 120Hz</div>
+        <div class="spec">AMD Ryzen Z2 A</div>
+        <div class="spec">16GB RAM</div>
+        <div class="spec">512GB SSD</div>
+        <div class="spec">639g</div>
+        <div class="spec">Batería 60Wh</div>
+        <div class="spec">Game Pass + Steam + Epic</div>
+        <div class="spec">17 botones</div>
+      </div>
+    </div>
+
+    <div class="model">
+      <div class="model-header">
+        <span class="model-name">ROG Zephyrus G16</span>
+        <span class="badge badge-purple">Gaming Pro</span>
+      </div>
+      <div class="tagline">La máquina pro. AAA, streaming, edición. Sin sacrificar portabilidad.</div>
+      <div class="specs">
+        <div class="spec">OLED Nebula 2.5K 240Hz</div>
+        <div class="spec">Intel Core Ultra 9</div>
+        <div class="spec">RTX 4070</div>
+        <div class="spec">1.85 kg</div>
+        <div class="spec">1.49 cm de grosor</div>
+      </div>
+    </div>
+
+    <div class="model">
+      <div class="model-header">
+        <span class="model-name">TUF Gaming F16</span>
+        <span class="badge badge-gold">🏆 PREMIO SORTEO</span>
+      </div>
+      <div class="tagline">Gaming serio. Más accesible que ROG. MIL-STD.</div>
+      <div class="specs">
+        <div class="spec">IPS 16" 165Hz</div>
+        <div class="spec">Intel i7-14650HX</div>
+        <div class="spec">RTX 5050/5060/5070</div>
+        <div class="spec">16-32GB DDR5</div>
+        <div class="spec">MIL-STD-810H</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREMIO -->
+  <div class="section">
+    <div class="section-title">🏆 Premio sorteo</div>
+    <div class="prize-box">
+      <div class="prize-title">ASUS TUF Gaming F16</div>
+      <div class="prize-detail">Condición: llegar a 500 espectadores simultáneos</div>
+      <div class="prize-detail">Participar: escanear QR → ingresar datos → listo</div>
+      <div class="prize-price">Valor: $1.159.000 CLP</div>
+    </div>
+  </div>
+
+  <!-- CÓDIGOS -->
+  <div class="section">
+    <div class="section-title">🎟️ Códigos de descuento</div>
+    <div class="codes-grid">
+
+      <div class="code-row">
+        <div class="code-pill">VIVO40</div>
+        <div class="code-meta">
+          <div class="code-discount">$40.000 off</div>
+          <div class="code-detail">Línea Vivobook</div>
+        </div>
+        <div class="code-qty">20 cupos</div>
+      </div>
+
+      <div class="code-row">
+        <div class="code-pill">MODOZEN100</div>
+        <div class="code-meta">
+          <div class="code-discount">$100.000 off</div>
+          <div class="code-detail">Zenbook A14</div>
+        </div>
+        <div class="code-qty">20 cupos</div>
+      </div>
+
+      <div class="code-row">
+        <div class="code-pill">XBOX30</div>
+        <div class="code-meta">
+          <div class="code-discount">$30.000 off</div>
+          <div class="code-detail">ROG Xbox Ally</div>
+        </div>
+        <div class="code-qty">5 cupos ⚠️</div>
+      </div>
+
+      <div class="code-row">
+        <div class="code-pill">SUPERTUF80</div>
+        <div class="code-meta">
+          <div class="code-discount">$80.000 off</div>
+          <div class="code-detail">Línea TUF Gaming (A16 y F16)</div>
+        </div>
+        <div class="code-qty">30 cupos</div>
+      </div>
+
+      <div class="code-row">
+        <div class="code-pill">ROG200</div>
+        <div class="code-meta">
+          <div class="code-discount">$200.000 off</div>
+          <div class="code-detail">ROG Zephyrus G16</div>
+        </div>
+        <div class="code-qty">10 cupos ⚠️</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESUMEN CIERRE -->
+  <div class="section">
+    <div class="section-title">📌 Frase de cierre (resumen)</div>
+    <div class="codes-grid">
+      <div class="code-row"><div class="code-meta"><div class="code-discount">Productividad y versatilidad</div><div class="code-detail">→ Vivobook · VIVO40</div></div></div>
+      <div class="code-row"><div class="code-meta"><div class="code-discount">Portabilidad premium</div><div class="code-detail">→ Zenbook · MODOZEN100</div></div></div>
+      <div class="code-row"><div class="code-meta"><div class="code-discount">Gaming portátil consola</div><div class="code-detail">→ ROG Xbox Ally · XBOX30</div></div></div>
+      <div class="code-row"><div class="code-meta"><div class="code-discount">Pro en gaming y creación</div><div class="code-detail">→ ROG · ROG200</div></div></div>
+    </div>
+  </div>
+
+  <div style="text-align:center; color:#333; font-size:11px; margin-top:16px; padding-bottom:24px;">
+    Generado por Claudio · bencord ASUS Live 4 mar 2026
+  </div>
+
+</body>
+</html>
